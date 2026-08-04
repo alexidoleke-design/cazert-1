@@ -733,12 +733,12 @@
 
   /* SERVICES */
   .section.services{
-    background:#F5F0E1;
-    color:#2A241C;
+    background:#FFFFFF;
+    color:#000000;
   }
   .section.services .section__title,
   .section.services .eyebrow{
-    color:#2A241C;
+    color:#000000;
   }
   .section.services .eyebrow b{
     color:var(--orange);
@@ -1064,6 +1064,32 @@
   .cat-faq__q{ margin:0 0 4px 0; font-weight:600; color:var(--text); }
   .cat-faq__a{ margin:0 0 12px 0; color:var(--muted); }
 
+  /* ── Surcharges pour la section Portfolio (fond blanc) ──
+     Les styles ci-dessus (jaune/gris clair) sont pensés pour un fond sombre.
+     Ici on garde une bonne lisibilité sur fond blanc : titres en orange,
+     texte en noir. */
+  .section.services .service-more-btn{
+    color:#E6007E;
+  }
+  .section.services .service-more-btn:hover{
+    color:#B8960C;
+  }
+  .section.services .service-more{
+    color:#000000;
+    border-top-color:rgba(0,0,0,.15);
+  }
+  .section.services .service-more h2,
+  .section.services .service-more h3,
+  .section.services .service-more strong{
+    color:var(--orange);
+  }
+  .section.services .cat-faq__q{
+    color:var(--orange);
+  }
+  .section.services .cat-faq__a{
+    color:#2A241C;
+  }
+
   .portfolio-category{ margin-bottom:56px; }
   .portfolio-category:last-child{ margin-bottom:0; }
   .portfolio-category__title{
@@ -1073,7 +1099,6 @@
     letter-spacing:.02em;
     margin-bottom:8px;
   }
-  .portfolio-category__desc{ color:var(--muted); margin-bottom:20px; max-width:640px; }
 
   /* BOUTON WHATSAPP FLOTTANT */
   .whatsapp-float{
@@ -1120,6 +1145,7 @@
       <a href="portfolio.html" style="color:var(--yellow);">Portfolio</a>
       <a href="index.html#contact">Contact</a>
       <a href="formations.html">Nos formations</a>
+      <a href="ressources.html">Ressources</a>
     </nav>
     <div class="nav__right">
       <a class="btn btn--primary" href="https://wa.me/22967542094" target="_blank" rel="noopener" style="padding:10px 18px;font-size:.82rem;">WhatsApp</a>
@@ -1310,6 +1336,7 @@
       <a href="portfolio.html">Portfolio</a>
       <a href="index.html#contact">Contact</a>
       <a href="formations.html">Nos formations</a>
+      <a href="ressources.html">Ressources</a>
       <a href="legal.html">Mentions légales</a>
     </div>
   </div>

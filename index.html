@@ -2,6 +2,14 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<!-- Redirection des liens Netlify Identity (confirmation email, invitation, mot de passe oublié)
+     vers l'espace admin. Sans ce script, ces liens atterrissent sur la page d'accueil
+     car Netlify Identity ne connaît que le domaine du site, pas la page du widget. -->
+<script>
+  if (window.location.hash && window.location.hash.match(/confirmation_token|invite_token|recovery_token|email_change_token|access_token/)) {
+    window.location.replace('/admin/' + window.location.hash);
+  }
+</script>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -749,6 +757,7 @@
       <a href="portfolio.html">Portfolio</a>
       <a href="#contact">Contact</a>
       <a href="formations.html">Nos formations</a>
+      <a href="ressources.html">Ressources</a>
     </nav>
     <div class="nav__right">
       <a class="btn btn--primary" href="https://wa.me/22967542094" target="_blank" rel="noopener" style="padding:10px 18px;font-size:.82rem;">WhatsApp</a>
@@ -792,6 +801,7 @@
       <div id="portfolio-gate" style="text-align:center;padding:20px 0 8px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
         <a class="btn btn--primary" href="portfolio.html">PORTFOLIO <span class="service-btn__arrow">↗</span></a>
         <a class="btn btn--primary" href="formations.html">NOS FORMATIONS <span class="service-btn__arrow">↗</span></a>
+        <a class="btn btn--primary" href="ressources.html">RESSOURCES <span class="service-btn__arrow">↗</span></a>
       </div>
     </div>
   </section>
@@ -859,6 +869,7 @@
       <a href="portfolio.html">Portfolio</a>
       <a href="#contact">Contact</a>
       <a href="formations.html">Nos formations</a>
+      <a href="ressources.html">Ressources</a>
       <a href="legal.html">Mentions légales</a>
     </div>
   </div>
