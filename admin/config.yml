@@ -66,7 +66,7 @@ collections:
                   - {label: "Publiée (visible et achetable)", value: "publie"}
                   - {label: "Bientôt disponible", value: "bientot"}
                   - {label: "Masquée (non visible sur le site)", value: "masque"}
-              - {label: "Image de couverture (URL)", name: "image", widget: "string"}
+              - {label: "Image de couverture", name: "image", widget: "image"}
               - {label: "Titre", name: "titre", widget: "string"}
               - {label: "Badge (ex: Nouveau, Bestseller)", name: "badge", widget: "string", required: false}
               - {label: "Sous-titre", name: "sousTitre", widget: "string"}
@@ -99,7 +99,7 @@ collections:
                   - {label: "Publiée (visible et achetable)", value: "publie"}
                   - {label: "Bientôt disponible", value: "bientot"}
                   - {label: "Masquée (non visible sur le site)", value: "masque"}
-              - {label: "Image de couverture (URL)", name: "image", widget: "string"}
+              - {label: "Image de couverture", name: "image", widget: "image"}
               - {label: "Titre", name: "titre", widget: "string"}
               - {label: "Badge (ex: Nouveau, Bestseller)", name: "badge", widget: "string", required: false}
               - {label: "Sous-titre", name: "sousTitre", widget: "string"}
