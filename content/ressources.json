@@ -1,40 +1,51 @@
 {
   "ressources": [
     {
-      "statut": "publie",
-      "image": "https://i.ytimg.com/vi/7Av3rLSwy5E/hqdefault.jpg",
-      "titre": "Pack LUTs Cinématiques",
       "badge": "Bestseller",
-      "sousTitre": "20 LUTs pour un rendu pro",
-      "descriptionCourte": "Une collection de LUTs prêtes à l'emploi pour donner un look cinéma à vos vidéos, compatibles Premiere Pro et DaVinci Resolve.",
-      "type": "Pack LUTs",
-      "prix": 15000,
       "ancienPrix": 20000,
-      "lienPaiement": "https://chariow.com/"
-    },
-    {
+      "lienPaiement": "https://chariow.com/",
+      "prix": 15000,
+      "titre": "Pack LUTs Cinématiques",
       "statut": "publie",
-      "image": "https://i.ytimg.com/vi/c5RPexbZ4N4/hqdefault.jpg",
-      "titre": "Templates Motion Design",
-      "badge": "Nouveau",
-      "sousTitre": "Titrages & habillages animés",
-      "descriptionCourte": "10 templates After Effects modifiables pour vos titrages, transitions et habillages de vidéos.",
-      "type": "Templates",
-      "prix": 20000,
-      "ancienPrix": null,
-      "lienPaiement": "https://chariow.com/"
+      "descriptionCourte": "Une collection de LUTs prêtes à l'emploi pour donner un look cinéma à vos vidéos, compatibles Premiere Pro et DaVinci Resolve.",
+      "sousTitre": "20 LUTs pour un rendu pro",
+      "type": "Pack LUTs",
+      "image": "https://i.ytimg.com/vi/7Av3rLSwy5E/hqdefault.jpg"
     },
     {
-      "statut": "bientot",
-      "image": "https://i.ytimg.com/vi/_byMcrNm164/hqdefault.jpg",
-      "titre": "Pack Presets CapCut",
-      "badge": null,
-      "sousTitre": "Montage rapide sur mobile",
-      "descriptionCourte": "Des presets prêts à l'emploi pour monter plus vite sur CapCut, idéal pour les Shorts et Reels.",
-      "type": "Preset",
-      "prix": 10000,
+      "badge": "Nouveau",
       "ancienPrix": null,
-      "lienPaiement": "https://chariow.com/"
+      "lienPaiement": "https://chariow.com/",
+      "prix": 20000,
+      "titre": "Templates Motion Design",
+      "statut": "publie",
+      "descriptionCourte": "10 templates After Effects modifiables pour vos titrages, transitions et habillages de vidéos.",
+      "sousTitre": "Titrages & habillages animés",
+      "type": "Templates",
+      "image": "https://i.ytimg.com/vi/c5RPexbZ4N4/hqdefault.jpg"
+    },
+    {
+      "badge": null,
+      "ancienPrix": null,
+      "lienPaiement": "https://chariow.com/",
+      "prix": 10000,
+      "titre": "Pack Presets CapCut",
+      "statut": "bientot",
+      "descriptionCourte": "Des presets prêts à l'emploi pour monter plus vite sur CapCut, idéal pour les Shorts et Reels.",
+      "sousTitre": "Montage rapide sur mobile",
+      "type": "Preset",
+      "image": "https://i.ytimg.com/vi/_byMcrNm164/hqdefault.jpg"
+    },
+    {
+      "badge": "Nouveau ",
+      "lienPaiement": "www.chariow.com",
+      "prix": 12000,
+      "titre": "Ressource 1",
+      "statut": "bientot",
+      "descriptionCourte": "Tout est présent dans ce pack",
+      "sousTitre": "Nouvelle ressource 1",
+      "type": "PRESET",
+      "image": "/uploads/1785617934784.jpg"
     }
   ]
 }
