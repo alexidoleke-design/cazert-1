@@ -16,6 +16,9 @@ collections:
 
   # ─────────────────────────────────────────────
   # PORTFOLIO — édite content/portfolio.json
+  # Sur la page portfolio.html, chaque catégorie alimente 2 sections distinctes :
+  #   1. "Nos réalisations" → Titre + Description courte + Vidéos
+  #   2. "Nos services"     → Titre + Texte détaillé + FAQ (affichés en entier, sans bouton "en savoir plus")
   # ─────────────────────────────────────────────
   - name: "portfolio"
     label: "Portfolio"
@@ -28,14 +31,16 @@ collections:
             name: "categories"
             widget: "list"
             summary: "{{titre}} ({{fields.videos}} vidéos)"
+            hint: "Chaque catégorie apparaît automatiquement dans 2 sections de la page Portfolio : « Nos réalisations » (titre, description courte, vidéos) et « Nos services » (titre, texte détaillé, FAQ)."
             fields:
-              - {label: "Titre du service", name: "titre", widget: "string"}
-              - {label: "Description courte (affichée sous le titre)", name: "description", widget: "string", required: false}
-              - {label: "Texte SEO détaillé (Markdown : ## pour les sous-titres, - pour les listes, **gras**)", name: "seoText", widget: "markdown", required: false}
+              - {label: "Titre du service", name: "titre", widget: "string", hint: "Affiché dans « Nos réalisations » ET comme titre dans « Nos services »."}
+              - {label: "Description courte", name: "description", widget: "string", required: false, hint: "Affichée sous le titre, dans la section « Nos réalisations » uniquement."}
+              - {label: "Texte détaillé du service (Markdown : ## pour les sous-titres, - pour les listes, **gras**)", name: "seoText", widget: "markdown", required: false, hint: "Affiché intégralement (texte complet, pas de repli) dans la section « Nos services », en bas de la page Portfolio."}
               - label: "Questions fréquentes de ce service"
                 name: "faq"
                 widget: "list"
                 required: false
+                hint: "Affichées intégralement dans la section « Nos services »."
                 fields:
                   - {label: "Question", name: "question", widget: "string"}
                   - {label: "Réponse", name: "reponse", widget: "text"}

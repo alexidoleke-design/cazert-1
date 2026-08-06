@@ -278,17 +278,96 @@
   }
   .about__text strong{ color:var(--text); }
 
+  /* AVIS CLIENTS */
+  .testimonials{ overflow:hidden; }
+  .testimonials__eyebrow{
+    text-align:center;
+    justify-content:center;
+    margin-top:8px;
+  }
+  .testimonials__track-wrap{
+    overflow:hidden;
+    width:100%;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  }
+  .testimonials__track{
+    display:flex;
+    gap:24px;
+    width:max-content;
+    animation:testimonials-scroll 34s linear infinite;
+  }
+  .testimonials__track-wrap:hover .testimonials__track{
+    animation-play-state:paused;
+  }
+  .testimonials__card{
+    height:clamp(160px, 30vw, 260px);
+    width:auto;
+    max-width:88vw;
+    flex-shrink:0;
+    border-radius:16px;
+    border:1px solid var(--border);
+    display:block;
+  }
+  @keyframes testimonials-scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
   /* SERVICES */
   .section.services{
-    background:#F5F0E1;
-    color:#2A241C;
+    background:#FFFFFF;
+    color:#000000;
   }
   .section.services .section__title,
   .section.services .eyebrow{
-    color:#2A241C;
+    color:#000000;
   }
   .section.services .eyebrow b{
     color:var(--orange);
+  }
+
+  /* CARTES PORTFOLIO / FORMATIONS / RESSOURCES */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .services-grid__card{
+    display:flex;
+    flex-direction:column;
+    background:#FFFFFF;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:32px 28px;
+    box-shadow:0 6px 24px rgba(0,0,0,.06);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .services-grid__card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 32px rgba(0,0,0,.10);
+  }
+  .services-grid__title{
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    font-size:1.3rem;
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    color:#000000;
+    margin:0 0 12px 0;
+  }
+  .services-grid__desc{
+    color:#4A4136;
+    font-size:.98rem;
+    line-height:1.55;
+    flex:1;
+    margin:0 0 26px 0;
+  }
+  .services-grid__card .btn{
+    align-self:center;
+  }
+  @media (max-width:900px){
+    .services-grid{ grid-template-columns:1fr; }
   }
   .service{
     display:grid;
@@ -598,77 +677,6 @@
     .modal-videos{ grid-template-columns:1fr; }
   }
 
-  /* ── Service cards (encadrées comme Contact) ── */
-  .services-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
-  }
-  .service-card{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-    gap:16px;
-    border:1px solid rgba(42,36,28,.12);
-    border-radius:18px;
-    padding:32px 24px;
-    text-align:center;
-    background:#E7DCC0;
-    box-shadow:0 8px 20px rgba(42,36,28,.14);
-    transition:border-color .2s ease, transform .2s ease, background .2s ease, box-shadow .2s ease;
-    height:100%;
-  }
-  .service-card:hover{
-    border-color:var(--orange);
-    transform:translateY(-4px);
-    background:#E0D3AF;
-    box-shadow:0 12px 28px rgba(42,36,28,.20);
-  }
-  .service-card__title{
-    font-family:'Anton',sans-serif;
-    font-weight:400;
-    font-size:clamp(1.5rem, 3vw, 2.1rem);
-    letter-spacing:.02em;
-    text-transform:uppercase;
-    color:#2A241C;
-    text-align:center;
-    line-height:1.1;
-  }
-  .service-card__desc{
-    font-size:.92rem;
-    color:#4A4136;
-    line-height:1.5;
-    max-width:340px;
-  }
-  .service-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    padding:13px 22px;
-    margin-top:auto;
-    background:linear-gradient(120deg,var(--yellow),var(--orange));
-    border:2px solid transparent;
-    border-radius:999px;
-    cursor:pointer;
-    font-family:'Inter',sans-serif;
-    font-size:.95rem;
-    font-weight:700;
-    color:#08080A;
-    max-width:100%;
-    text-align:center;
-    transition:transform .15s, box-shadow .2s;
-  }
-  .service-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 24px rgba(255,107,0,.3);
-  }
-  .service-btn__arrow{ font-size:1rem; }
-  @media(max-width:700px){
-    .services-grid{ grid-template-columns:1fr; }
-  }
-
   /* BOUTON WHATSAPP FLOTTANT */
   .whatsapp-float{
     position:fixed;
@@ -785,12 +793,28 @@
 
   <div class="divider"></div>
 
-  <section class="section about" id="apropos">
+  <section class="section about testimonials" id="apropos">
     <div class="container">
       <div class="section__head">
         <h2 class="section__title section__title--big">Montage vidéo</h2>
       </div>
       <p class="about__text"><strong>Cazert_Studio</strong> est une agence spécialisée en <strong>montage vidéo</strong> et <strong>motion design</strong>. Nous intervenons sur la création de contenu pour YouTube, les formats courts (Shorts, Reels, TikTok), les interviews, les publicités vidéo et l'habillage graphique animé.</p>
+
+      <p class="eyebrow testimonials__eyebrow"><b>Ils nous ont fait confiance</b></p>
+    </div>
+
+    <div class="testimonials__track-wrap">
+      <div class="testimonials__track">
+        <img class="testimonials__card" src="/uploads/avis-client-1.jpg" alt="Avis client Zakariya Loutfi, 5 étoiles : très efficace, livraison rapide, je recommande sans hésiter." loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-2.jpg" alt="Avis client ambroisefrad, 5 étoiles : Alexis a parfaitement répondu à ma demande, je recommande." loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-3.jpg" alt="Avis client Housna, 5 étoiles : au-delà du résultat attendu, magnifique tant le contenu que le professionnel." loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-4.jpg" alt="Avis client Patrick_Moreno, 5 étoiles : excellent travail, vidéo de grande qualité, communication fluide, délais respectés." loading="lazy">
+        <!-- Duplication pour un défilement en boucle continue -->
+        <img class="testimonials__card" src="/uploads/avis-client-1.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-2.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-3.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-4.jpg" alt="" aria-hidden="true" loading="lazy">
+      </div>
     </div>
   </section>
 
@@ -798,10 +822,22 @@
 
   <section class="section services" id="services">
     <div class="container">
-      <div id="portfolio-gate" style="text-align:center;padding:20px 0 8px 0;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a class="btn btn--primary" href="portfolio.html">PORTFOLIO <span class="service-btn__arrow">↗</span></a>
-        <a class="btn btn--primary" href="formations.html">NOS FORMATIONS <span class="service-btn__arrow">↗</span></a>
-        <a class="btn btn--primary" href="ressources.html">RESSOURCES <span class="service-btn__arrow">↗</span></a>
+      <div class="services-grid">
+        <div class="services-grid__card">
+          <h3 class="services-grid__title">Portfolio</h3>
+          <p class="services-grid__desc">Découvrez nos réalisations en montage vidéo et motion design : vidéos YouTube, Shorts, Reels, interviews et publicités livrées à nos clients.</p>
+          <a class="btn btn--primary" href="portfolio.html">ACCÉDER AU PORTFOLIO <span class="service-btn__arrow">↗</span></a>
+        </div>
+        <div class="services-grid__card">
+          <h3 class="services-grid__title">Nos formations</h3>
+          <p class="services-grid__desc">Grâce à nos formations, nous avons déjà accompagné plusieurs personnes à se lancer dans le montage vidéo, du débutant au niveau avancé.</p>
+          <a class="btn btn--primary" href="formations.html">VOIR LES FORMATIONS <span class="service-btn__arrow">↗</span></a>
+        </div>
+        <div class="services-grid__card">
+          <h3 class="services-grid__title">Ressources</h3>
+          <p class="services-grid__desc">Des ressources prêtes à l'emploi — packs de LUTs, presets et templates de motion design — pour aller plus vite dans vos montages.</p>
+          <a class="btn btn--primary" href="ressources.html">VOIR LES RESSOURCES <span class="service-btn__arrow">↗</span></a>
+        </div>
       </div>
     </div>
   </section>

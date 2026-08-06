@@ -208,7 +208,7 @@
           "name": "Quel est le tarif d'un montage d'interview ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Le tarif dépend de la durée de l'interview brute et du niveau d'habillage souhaité. Une grille indicative est disponible ci-dessus, et un devis personnalisé peut être établi sur demande."
+            "text": "Le tarif dépend de la durée de l'interview brute et du niveau d'habillage souhaité. Un devis personnalisé peut être établi sur demande, directement via WhatsApp."
           }
         },
         {
@@ -400,7 +400,7 @@
           "name": "Combien de temps pour monter une VSL ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Entre 3 et 8 jours selon la durée et la complexité du montage, comme indiqué dans la grille tarifaire."
+            "text": "Entre 3 et 8 jours selon la durée et la complexité du montage."
           }
         },
         {
@@ -731,6 +731,42 @@
   }
   .about__text strong{ color:var(--text); }
 
+  /* AVIS CLIENTS */
+  .testimonials{ overflow:hidden; }
+  .testimonials__eyebrow{
+    text-align:center;
+    justify-content:center;
+    margin-top:8px;
+  }
+  .testimonials__track-wrap{
+    overflow:hidden;
+    width:100%;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  }
+  .testimonials__track{
+    display:flex;
+    gap:24px;
+    width:max-content;
+    animation:testimonials-scroll 34s linear infinite;
+  }
+  .testimonials__track-wrap:hover .testimonials__track{
+    animation-play-state:paused;
+  }
+  .testimonials__card{
+    height:clamp(160px, 30vw, 260px);
+    width:auto;
+    max-width:88vw;
+    flex-shrink:0;
+    border-radius:16px;
+    border:1px solid var(--border);
+    display:block;
+  }
+  @keyframes testimonials-scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
   /* SERVICES */
   .section.services{
     background:#FFFFFF;
@@ -984,20 +1020,20 @@
   }
 
   .vid-card{
-    border:1px solid rgba(42,36,28,.12);
+    border:1px solid rgba(0,0,0,.12);
     border-radius:14px;
     overflow:hidden;
-    background:#E7DCC0;
+    background:#FFFFFF;
     cursor:pointer;
     position:relative;
-    box-shadow:0 8px 20px rgba(42,36,28,.10);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
     transition:border-color .2s ease, transform .2s ease, background .2s ease, box-shadow .2s ease;
   }
   .vid-card:hover{
     border-color:var(--orange);
     transform:translateY(-4px);
-    background:#E0D3AF;
-    box-shadow:0 12px 28px rgba(42,36,28,.16);
+    background:#F5F5F5;
+    box-shadow:0 12px 28px rgba(0,0,0,.14);
   }
 
   /* Label strip */
@@ -1090,6 +1126,62 @@
     color:#2A241C;
   }
 
+  /* NOS SERVICES — descriptions complètes, sans bouton "en savoir plus" */
+  .service-detail{
+    max-width:760px;
+    margin:0 auto 48px auto;
+    padding-bottom:48px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .service-detail:last-child{
+    margin-bottom:0;
+    padding-bottom:0;
+    border-bottom:none;
+  }
+  .service-detail__title{
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    font-size:clamp(1.3rem, 2.6vw, 1.7rem);
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    color:#FFFFFF;
+    margin:0 0 18px 0;
+  }
+  .service-detail .service-more{
+    display:block;
+    border-top:none;
+    padding-top:0;
+    margin-top:0;
+    color:var(--text);
+  }
+  .service-detail .service-more h2,
+  .service-detail .service-more h3,
+  .service-detail .service-more strong{
+    color:var(--orange);
+  }
+  .service-detail .cat-faq__q{
+    color:var(--orange);
+  }
+  .service-detail .cat-faq__a{
+    color:var(--text);
+  }
+
+  /* JE M'OCCUPE DU MONTAGE — fond blanc, texte noir */
+  #details{
+    background:#FFFFFF;
+    --text:#000000;
+    --muted:#2A241C;
+  }
+  #details .service-more{
+    border-top-color:rgba(0,0,0,.15);
+  }
+  #details .service-more-btn{
+    color:#E6007E;
+  }
+  #details .service-more-btn:hover{
+    color:#B8960C;
+  }
+
   .portfolio-category{ margin-bottom:56px; }
   .portfolio-category:last-child{ margin-bottom:0; }
   .portfolio-category__title{
@@ -1163,16 +1255,41 @@
       <div class="eyebrow"><b>◆</b> Cazert_Studio</div>
       <h1 class="section__title section__title--big">Portfolio</h1>
       <p class="hero__text" style="margin-top:18px;">Une sélection de nos réalisations : interviews, motion design, publicités, vidéos YouTube, VSL, reels Instagram et logos animés. Cliquez sur une catégorie pour découvrir les vidéos.</p>
+
+      <p class="eyebrow testimonials__eyebrow"><b>Ils nous ont fait confiance</b></p>
+    </div>
+
+    <div class="testimonials__track-wrap">
+      <div class="testimonials__track">
+        <img class="testimonials__card" src="/uploads/avis-client-1.jpg" alt="Avis client Zakariya Loutfi, 5 étoiles : très efficace, livraison rapide, je recommande sans hésiter." loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-2.jpg" alt="Avis client ambroisefrad, 5 étoiles : Alexis a parfaitement répondu à ma demande, je recommande." loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-3.jpg" alt="Avis client Housna, 5 étoiles : au-delà du résultat attendu, magnifique tant le contenu que le professionnel." loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-4.jpg" alt="Avis client Patrick_Moreno, 5 étoiles : excellent travail, vidéo de grande qualité, communication fluide, délais respectés." loading="lazy">
+        <!-- Duplication pour un défilement en boucle continue -->
+        <img class="testimonials__card" src="/uploads/avis-client-1.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-2.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-3.jpg" alt="" aria-hidden="true" loading="lazy">
+        <img class="testimonials__card" src="/uploads/avis-client-4.jpg" alt="" aria-hidden="true" loading="lazy">
+      </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <section class="section services" id="services">
+  <section class="section services" id="realisations">
     <div class="container">
-      <h2 style="font-family:'Anton',sans-serif;text-align:center;text-transform:uppercase;letter-spacing:.02em;font-size:1.6rem;margin-bottom:32px;">Nos services</h2>
+      <h2 style="font-family:'Anton',sans-serif;text-align:center;text-transform:uppercase;letter-spacing:.02em;font-size:1.6rem;margin-bottom:32px;">Nos réalisations</h2>
       <div id="portfolioContent"></div>
       <p id="portfolioEmpty" style="display:none;text-align:center;color:#4A4136;">Impossible de charger le portfolio pour le moment. Réessayez plus tard.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="section" id="nos-services">
+    <div class="container">
+      <h2 style="font-family:'Anton',sans-serif;text-align:center;text-transform:uppercase;letter-spacing:.02em;font-size:1.6rem;margin-bottom:32px;">Nos services</h2>
+      <div id="servicesDetailContent"></div>
     </div>
   </section>
 
@@ -1232,20 +1349,6 @@
             <li>Travail soigné, créatif et orienté résultats</li>
           </ul>
           <p style="margin:0 0 24px 0;">Mon but : créer une vidéo impactante, professionnelle et prête à convertir.</p>
-
-          <p style="font-weight:700;color:var(--text);">Tarifs indicatifs — Montage vidéo</p>
-          <ul style="margin:0 0 14px 20px;padding:0;list-style:disc;">
-            <li><b>39 357 F CFA</b> — Montage 2 minutes, livraison en 3 jours</li>
-            <li><b>78 715 F CFA</b> — Montage 5 minutes, livraison en 5 jours</li>
-            <li><b>131 191 F CFA</b> — Montage 10 minutes, livraison en 7 jours</li>
-            <li><b>170 549 F CFA</b> — Montage 15 minutes, livraison en 9 jours</li>
-            <li><b>209 906 F CFA</b> — Montage 20 minutes, livraison en 11 jours</li>
-            <li><b>249 264 F CFA</b> — Montage 25 minutes, livraison en 13 jours</li>
-            <li><b>295 181 F CFA</b> — Montage 30 minutes, livraison en 15 jours</li>
-            <li><b>393 574 F CFA</b> — Montage 45 minutes, livraison en 17 jours</li>
-            <li><b>524 766 F CFA</b> — Montage 60 minutes, livraison en 20 jours</li>
-          </ul>
-          <p style="margin:0 0 24px 0;">Grille tarifaire complète et devis personnalisé disponibles sur simple demande via WhatsApp.</p>
 
           <p style="font-weight:700;color:var(--text);">Questions fréquentes — Montage vidéo</p>
           <p style="margin:0 0 4px 0;font-weight:600;color:var(--text);">Quels types de vidéos montez-vous ?</p>
@@ -1313,7 +1416,7 @@
 
         <div class="contact__ctas">
           <a class="btn btn--primary" href="https://wa.me/22967542094" target="_blank" rel="noopener">+229 67 54 20 94 · WhatsApp</a>
-          <a class="btn btn--ghost" href="mailto:alexidoleke@gmail.com">alexidoleke@gmail.com</a>
+          <a class="btn btn--ghost" href="mailto:contact@cazertstudio.com">contact@cazertstudio.com</a>
         </div>
 
         <div class="contact__socials">
@@ -1525,51 +1628,48 @@
     });
     section.appendChild(grid);
 
-    // ── Texte SEO détaillé (Markdown, édité via l'admin) + FAQ ──
+    return section;
+  }
+
+  // ── Description complète de chaque service (section "Nos services") ──
+  // Affichée intégralement, sans bouton "en savoir plus" : texte SEO (Markdown) + FAQ.
+  function buildCategoryDetail(cat, catIndex) {
     var hasSeoText = cat.seoText && cat.seoText.trim().length > 0;
     var hasFaq = cat.faq && cat.faq.length > 0;
-    if (hasSeoText || hasFaq) {
-      var moreId = 'cat-more-' + catIndex;
-      var btn = document.createElement('button');
-      btn.className = 'service-more-btn';
-      btn.id = moreId + '-btn';
-      btn.setAttribute('aria-expanded', 'false');
-      btn.setAttribute('aria-controls', moreId);
-      btn.innerHTML = 'En savoir plus <span class="service-more-btn__arrow">▾</span>';
-      btn.addEventListener('click', function(){ toggleMore(moreId); });
-      section.appendChild(btn);
+    if (!hasSeoText && !hasFaq) return null;
 
-      var panel = document.createElement('div');
-      panel.className = 'service-more';
-      panel.id = moreId;
-      panel.style.display = 'none';
+    var wrap = document.createElement('div');
+    wrap.className = 'service-detail';
 
-      if (hasSeoText) {
-        var textWrap = document.createElement('div');
-        textWrap.innerHTML = renderMarkdown(cat.seoText);
-        panel.appendChild(textWrap);
-      }
+    var title = document.createElement('h3');
+    title.className = 'service-detail__title';
+    title.textContent = cat.titre;
+    wrap.appendChild(title);
 
-      if (hasFaq) {
-        var faqWrap = document.createElement('div');
-        faqWrap.className = 'cat-faq';
-        cat.faq.forEach(function(item){
-          var q = document.createElement('p');
-          q.className = 'cat-faq__q';
-          q.textContent = item.question;
-          var a = document.createElement('p');
-          a.className = 'cat-faq__a';
-          a.textContent = item.reponse;
-          faqWrap.appendChild(q);
-          faqWrap.appendChild(a);
-        });
-        panel.appendChild(faqWrap);
-      }
-
-      section.appendChild(panel);
+    if (hasSeoText) {
+      var textWrap = document.createElement('div');
+      textWrap.className = 'service-more';
+      textWrap.innerHTML = renderMarkdown(cat.seoText);
+      wrap.appendChild(textWrap);
     }
 
-    return section;
+    if (hasFaq) {
+      var faqWrap = document.createElement('div');
+      faqWrap.className = 'cat-faq';
+      cat.faq.forEach(function(item){
+        var q = document.createElement('p');
+        q.className = 'cat-faq__q';
+        q.textContent = item.question;
+        var a = document.createElement('p');
+        a.className = 'cat-faq__a';
+        a.textContent = item.reponse;
+        faqWrap.appendChild(q);
+        faqWrap.appendChild(a);
+      });
+      wrap.appendChild(faqWrap);
+    }
+
+    return wrap;
   }
 
   // ── En savoir plus (panneau dépliable, catégories + intro générale) ──
@@ -1588,6 +1688,7 @@
 
   function loadPortfolio() {
     var container = document.getElementById('portfolioContent');
+    var detailContainer = document.getElementById('servicesDetailContent');
     var empty = document.getElementById('portfolioEmpty');
     fetch('content/portfolio.json')
       .then(function(r){
@@ -1597,8 +1698,11 @@
       .then(function(data){
         var categories = data.categories || [];
         container.innerHTML = '';
+        detailContainer.innerHTML = '';
         categories.forEach(function(cat, catIndex){
           container.appendChild(buildCategorySection(cat, catIndex));
+          var detail = buildCategoryDetail(cat, catIndex);
+          if (detail) detailContainer.appendChild(detail);
         });
       })
       .catch(function(err){
