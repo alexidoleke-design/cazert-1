@@ -1635,8 +1635,7 @@
   // Affichée intégralement, sans bouton "en savoir plus" : texte SEO (Markdown) + FAQ.
   function buildCategoryDetail(cat, catIndex) {
     var hasSeoText = cat.seoText && cat.seoText.trim().length > 0;
-    var hasFaq = cat.faq && cat.faq.length > 0;
-    if (!hasSeoText && !hasFaq) return null;
+    if (!hasSeoText) return null;
 
     var wrap = document.createElement('div');
     wrap.className = 'service-detail';
@@ -1646,28 +1645,10 @@
     title.textContent = cat.titre;
     wrap.appendChild(title);
 
-    if (hasSeoText) {
-      var textWrap = document.createElement('div');
-      textWrap.className = 'service-more';
-      textWrap.innerHTML = renderMarkdown(cat.seoText);
-      wrap.appendChild(textWrap);
-    }
-
-    if (hasFaq) {
-      var faqWrap = document.createElement('div');
-      faqWrap.className = 'cat-faq';
-      cat.faq.forEach(function(item){
-        var q = document.createElement('p');
-        q.className = 'cat-faq__q';
-        q.textContent = item.question;
-        var a = document.createElement('p');
-        a.className = 'cat-faq__a';
-        a.textContent = item.reponse;
-        faqWrap.appendChild(q);
-        faqWrap.appendChild(a);
-      });
-      wrap.appendChild(faqWrap);
-    }
+    var textWrap = document.createElement('div');
+    textWrap.className = 'service-more';
+    textWrap.innerHTML = renderMarkdown(cat.seoText);
+    wrap.appendChild(textWrap);
 
     return wrap;
   }
