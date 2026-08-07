@@ -928,6 +928,47 @@
     width:7px; height:7px; border-radius:50%;
     background:var(--orange);
   }
+  .contact__form{
+    margin-top:40px;
+    max-width:560px;
+    text-align:left;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .contact__form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .contact__form-field{ display:flex; flex-direction:column; gap:6px; }
+  .contact__form-field label{
+    font-family:'Space Mono',monospace;
+    font-size:.78rem;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    color:var(--muted);
+  }
+  .contact__form-field input,
+  .contact__form-field textarea{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:8px;
+    padding:12px 14px;
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    font-size:.95rem;
+    resize:vertical;
+  }
+  .contact__form-field input:focus,
+  .contact__form-field textarea:focus{
+    outline:none;
+    border-color:var(--yellow);
+  }
+  .contact__form button{ align-self:flex-start; }
+  @media (max-width:640px){
+    .contact__form-row{ grid-template-columns:1fr; }
+  }
 
   /* FOOTER */
   .footer{
@@ -1416,7 +1457,7 @@
 
         <div class="contact__ctas">
           <a class="btn btn--primary" href="https://wa.me/22967542094" target="_blank" rel="noopener">+229 67 54 20 94 · WhatsApp</a>
-          <a class="btn btn--ghost" href="mailto:contact@cazertstudio.com">contact@cazertstudio.com</a>
+          <a class="btn btn--ghost" href="mailto:alexidoleke@gmail.com">alexidoleke@gmail.com</a>
         </div>
 
         <div class="contact__socials">
@@ -1425,6 +1466,36 @@
           <a class="social" href="https://www.tiktok.com/@alex.idoleke?lang=fr" target="_blank" rel="noopener"><span class="social__dot"></span>TikTok</a>
           <a class="social" href="https://www.youtube.com/@alexis.idoleke" target="_blank" rel="noopener"><span class="social__dot"></span>YouTube</a>
         </div>
+
+        <form class="contact__form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci.html">
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="position:absolute;left:-9999px;" aria-hidden="true">
+            <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+          </p>
+
+          <div class="contact__form-row">
+            <div class="contact__form-field">
+              <label for="cf-name">Nom</label>
+              <input type="text" id="cf-name" name="name" required>
+            </div>
+            <div class="contact__form-field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" required>
+            </div>
+          </div>
+
+          <div class="contact__form-field">
+            <label for="cf-subject">Sujet</label>
+            <input type="text" id="cf-subject" name="subject">
+          </div>
+
+          <div class="contact__form-field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Envoyer le message</button>
+        </form>
       </div>
     </div>
   </section>
