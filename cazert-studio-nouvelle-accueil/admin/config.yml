@@ -1,0 +1,152 @@
+# Configuration Decap CMS — Cazert_Studio
+# Documentation : https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: git-gateway
+  branch: main
+  # ⚠️ Nécessite d'activer "Identity" + "Git Gateway" dans le dashboard Netlify
+  # (Site settings → Identity → Enable Identity, puis Services → Git Gateway → Enable)
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+locale: "fr"
+
+collections:
+
+  # ─────────────────────────────────────────────
+  # NOS SERVICES — édite content/services.json
+  # Alimente la section "Nos services" de la page d'accueil : les cartes avec
+  # icône, badge, description, prix et bouton "Voir des exemples".
+  # ⚠️ Le champ "Catégorie du portfolio (lien)" doit correspondre EXACTEMENT
+  # (même orthographe) au "Titre du service" d'une catégorie dans la collection
+  # Portfolio ci-dessous — c'est ce qui permet au bouton "Voir des exemples"
+  # d'ouvrir la bonne fenêtre avec les bonnes vidéos.
+  # ─────────────────────────────────────────────
+  - name: "services"
+    label: "Nos services (accueil)"
+    files:
+      - file: "content/services.json"
+        label: "Section Nos services"
+        name: "services"
+        fields:
+          - {label: "Titre de la section", name: "titreSection", widget: "string"}
+          - {label: "Texte d'introduction", name: "introSection", widget: "text"}
+          - label: "Cartes de service"
+            name: "cartes"
+            widget: "list"
+            summary: "{{titre}}"
+            fields:
+              - label: "Icône"
+                name: "icone"
+                widget: "select"
+                options:
+                  - {label: "Vidéo / YouTube (caméra)", value: "youtube"}
+                  - {label: "Short-form (téléphone vertical)", value: "shortform"}
+                  - {label: "Publicité ADS (cible)", value: "ads"}
+                  - {label: "Motion Design (étoile)", value: "motion"}
+                  - {label: "Interview (micro)", value: "interview"}
+                  - {label: "VSL (courbe de croissance)", value: "vsl"}
+                  - {label: "Logo animé (orbite)", value: "logo"}
+              - {label: "Titre de la carte", name: "titre", widget: "string"}
+              - {label: "Badge (ex: + Rétention)", name: "badge", widget: "string", required: false}
+              - {label: "Description courte", name: "description", widget: "text"}
+              - {label: "Ligne prix / info", name: "prix", widget: "string", required: false, hint: "Ex : « Sur devis, adapté à votre projet »"}
+              - label: "Catégorie du portfolio (lien)"
+                name: "categoriePortfolio"
+                widget: "string"
+                hint: "Doit correspondre EXACTEMENT au « Titre du service » utilisé dans la collection Portfolio, sinon le bouton « Voir des exemples » n'ouvrira aucune vidéo."
+              - {label: "Mettre en avant cette carte ?", name: "populaire", widget: "boolean", default: false}
+              - {label: "Texte du bandeau (si mise en avant)", name: "ribbon", widget: "string", required: false, hint: "Ex : « LE + DEMANDÉ ». Laisser vide si « Mise en avant » n'est pas coché."}
+
+  # ─────────────────────────────────────────────
+  # PORTFOLIO — édite content/portfolio.json
+  # Sur la page portfolio.html, chaque catégorie alimente 2 sections distinctes :
+  #   1. "Nos réalisations" → Titre + Description courte + Vidéos
+  #   2. "Nos services"     → Titre + Texte détaillé (tout, y compris FAQ et tarifs, dans le même champ)
+  # ─────────────────────────────────────────────
+  - name: "portfolio"
+    label: "Portfolio"
+    files:
+      - file: "content/portfolio.json"
+        label: "Catégories du portfolio"
+        name: "portfolio"
+        fields:
+          - label: "Catégories"
+            name: "categories"
+            widget: "list"
+            summary: "{{titre}} ({{fields.videos}} vidéos)"
+            hint: "Chaque catégorie apparaît automatiquement dans 2 sections de la page Portfolio : « Nos réalisations » (titre, description courte, vidéos) et « Nos services » (titre + texte détaillé complet)."
+            fields:
+              - {label: "Titre du service", name: "titre", widget: "string", hint: "Affiché dans « Nos réalisations » ET comme titre dans « Nos services »."}
+              - {label: "Description courte", name: "description", widget: "string", required: false, hint: "Affichée sous le titre, dans la section « Nos réalisations » uniquement."}
+              - {label: "Texte détaillé du service (Markdown : ## pour les sous-titres, - pour les listes, **gras**)", name: "seoText", widget: "markdown", required: false, hint: "Tout va ici, dans le même champ : présentation, FAQ, tarifs, etc. Utilisez ## pour un sous-titre (ex: ## Questions fréquentes) et **texte en gras** pour une question ou un point important. Ce texte est affiché intégralement dans la section « Nos services », sans repli."}
+              - label: "Vidéos (liens YouTube complets ou Shorts)"
+                name: "videos"
+                widget: "list"
+                allow_add: true
+
+  # ─────────────────────────────────────────────
+  # FORMATIONS — édite content/formations.json
+  # ─────────────────────────────────────────────
+  - name: "formations"
+    label: "Formations"
+    files:
+      - file: "content/formations.json"
+        label: "Liste des formations"
+        name: "formations"
+        fields:
+          - label: "Formations"
+            name: "formations"
+            widget: "list"
+            summary: "{{titre}} — {{statut}}"
+            fields:
+              - label: "Statut"
+                name: "statut"
+                widget: "select"
+                options:
+                  - {label: "Publiée (visible et achetable)", value: "publie"}
+                  - {label: "Bientôt disponible", value: "bientot"}
+                  - {label: "Masquée (non visible sur le site)", value: "masque"}
+              - {label: "Image de couverture", name: "image", widget: "image"}
+              - {label: "Titre", name: "titre", widget: "string"}
+              - {label: "Badge (ex: Nouveau, Bestseller)", name: "badge", widget: "string", required: false}
+              - {label: "Sous-titre", name: "sousTitre", widget: "string"}
+              - {label: "Description courte", name: "descriptionCourte", widget: "text"}
+              - {label: "Durée", name: "duree", widget: "string"}
+              - {label: "Nombre de modules", name: "modules", widget: "number", value_type: "int"}
+              - {label: "Prix (FCFA)", name: "prix", widget: "number", value_type: "int"}
+              - {label: "Ancien prix (FCFA, optionnel)", name: "ancienPrix", widget: "number", value_type: "int", required: false}
+              - {label: "Lien de paiement", name: "lienPaiement", widget: "string"}
+
+  # ─────────────────────────────────────────────
+  # RESSOURCES — édite content/ressources.json
+  # ─────────────────────────────────────────────
+  - name: "ressources"
+    label: "Ressources"
+    files:
+      - file: "content/ressources.json"
+        label: "Liste des ressources"
+        name: "ressources"
+        fields:
+          - label: "Ressources"
+            name: "ressources"
+            widget: "list"
+            summary: "{{titre}} — {{statut}}"
+            fields:
+              - label: "Statut"
+                name: "statut"
+                widget: "select"
+                options:
+                  - {label: "Publiée (visible et achetable)", value: "publie"}
+                  - {label: "Bientôt disponible", value: "bientot"}
+                  - {label: "Masquée (non visible sur le site)", value: "masque"}
+              - {label: "Image de couverture", name: "image", widget: "image"}
+              - {label: "Titre", name: "titre", widget: "string"}
+              - {label: "Badge (ex: Nouveau, Bestseller)", name: "badge", widget: "string", required: false}
+              - {label: "Sous-titre", name: "sousTitre", widget: "string"}
+              - {label: "Description courte", name: "descriptionCourte", widget: "text"}
+              - {label: "Type de ressource (ex: Pack LUTs, Preset, Template)", name: "type", widget: "string"}
+              - {label: "Prix (FCFA)", name: "prix", widget: "number", value_type: "int"}
+              - {label: "Ancien prix (FCFA, optionnel)", name: "ancienPrix", widget: "number", value_type: "int", required: false}
+              - {label: "Lien de paiement (Chariow)", name: "lienPaiement", widget: "string"}
