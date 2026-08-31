@@ -86,3 +86,67 @@ collections:
                 widget: "list"
                 allow_add: true
 
+  # ─────────────────────────────────────────────
+  # FORMATIONS — édite content/formations.json
+  # ─────────────────────────────────────────────
+  - name: "formations"
+    label: "Formations"
+    files:
+      - file: "content/formations.json"
+        label: "Liste des formations"
+        name: "formations"
+        fields:
+          - label: "Formations"
+            name: "formations"
+            widget: "list"
+            summary: "{{titre}} — {{statut}}"
+            fields:
+              - label: "Statut"
+                name: "statut"
+                widget: "select"
+                options:
+                  - {label: "Publiée (visible et achetable)", value: "publie"}
+                  - {label: "Bientôt disponible", value: "bientot"}
+                  - {label: "Masquée (non visible sur le site)", value: "masque"}
+              - {label: "Image de couverture", name: "image", widget: "image"}
+              - {label: "Titre", name: "titre", widget: "string"}
+              - {label: "Badge (ex: Nouveau, Bestseller)", name: "badge", widget: "string", required: false}
+              - {label: "Sous-titre", name: "sousTitre", widget: "string"}
+              - {label: "Description courte", name: "descriptionCourte", widget: "text"}
+              - {label: "Durée", name: "duree", widget: "string"}
+              - {label: "Nombre de modules", name: "modules", widget: "number", value_type: "int"}
+              - {label: "Prix (FCFA)", name: "prix", widget: "number", value_type: "int"}
+              - {label: "Ancien prix (FCFA, optionnel)", name: "ancienPrix", widget: "number", value_type: "int", required: false}
+              - {label: "Lien de paiement", name: "lienPaiement", widget: "string"}
+
+  # ─────────────────────────────────────────────
+  # RESSOURCES — édite content/ressources.json
+  # ─────────────────────────────────────────────
+  - name: "ressources"
+    label: "Ressources"
+    files:
+      - file: "content/ressources.json"
+        label: "Liste des ressources"
+        name: "ressources"
+        fields:
+          - label: "Ressources"
+            name: "ressources"
+            widget: "list"
+            summary: "{{titre}} — {{statut}}"
+            fields:
+              - label: "Statut"
+                name: "statut"
+                widget: "select"
+                options:
+                  - {label: "Publiée (visible et achetable)", value: "publie"}
+                  - {label: "Bientôt disponible", value: "bientot"}
+                  - {label: "Masquée (non visible sur le site)", value: "masque"}
+              - {label: "Image de couverture", name: "image", widget: "image"}
+              - {label: "Titre", name: "titre", widget: "string"}
+              - {label: "Badge (ex: Nouveau, Bestseller)", name: "badge", widget: "string", required: false}
+              - {label: "Sous-titre", name: "sousTitre", widget: "string"}
+              - {label: "Description courte", name: "descriptionCourte", widget: "text"}
+              - {label: "Type de ressource (ex: Pack LUTs, Preset, Template)", name: "type", widget: "string"}
+              - {label: "Prix (FCFA)", name: "prix", widget: "number", value_type: "int"}
+              - {label: "Ancien prix (FCFA, optionnel)", name: "ancienPrix", widget: "number", value_type: "int", required: false}
+              - {label: "Lien de paiement (Chariow)", name: "lienPaiement", widget: "string"}
