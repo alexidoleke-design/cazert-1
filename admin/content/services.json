@@ -1,0 +1,76 @@
+{
+  "titreSection": "Nos services",
+  "introSection": "Un montage adapté à votre contenu et à votre objectif — pas une liste de logiciels, une solution.",
+  "cartes": [
+    {
+      "icone": "ads",
+      "titre": "Vidéo publicitaire ADS",
+      "badge": "+ Conversion",
+      "description": "Facebook Ads, TikTok Ads, YouTube Ads et contenus UGC pensés pour convertir.",
+      "prix": "À partir de 40 000 FCFA",
+      "categoriePortfolio": "Vidéo publicitaire ADS",
+      "populaire": false,
+      "ribbon": ""
+    },
+    {
+      "icone": "interview",
+      "titre": "Interview",
+      "badge": "+ Authenticité",
+      "description": "Montage fluide et dynamique : coupes franches, sous-titres, mise en valeur du discours.",
+      "prix": "À partir de 40 000 FCFA",
+      "categoriePortfolio": "Interview",
+      "populaire": false,
+      "ribbon": ""
+    },
+    {
+      "icone": "youtube",
+      "titre": "Vidéos YouTube",
+      "badge": "+ Rétention",
+      "description": "Vidéos longues dynamiques et structurées, storytelling, rythme et sound design.",
+      "prix": "À partir de 40 000 FCFA",
+      "categoriePortfolio": "Vidéos YouTube",
+      "populaire": true,
+      "ribbon": "LE + DEMANDÉ"
+    },
+    {
+      "icone": "shortform",
+      "titre": "Reel Instagram",
+      "badge": "+ Portée",
+      "description": "Reels, Shorts et TikTok pensés pour stopper le scroll dès les premières secondes.",
+      "prix": "À partir de 22 000 FCFA",
+      "categoriePortfolio": "Reel Instagram",
+      "populaire": false,
+      "ribbon": ""
+    },
+    {
+      "icone": "motion",
+      "titre": "Motion Design",
+      "badge": "+ Impact",
+      "description": "Titrages animés, habillages graphiques et animations sur mesure.",
+      "prix": "Sur devis, adapté à votre projet",
+      "categoriePortfolio": "Motion design",
+      "populaire": false,
+      "ribbon": ""
+    },
+    {
+      "icone": "logo",
+      "titre": "Logo animé",
+      "badge": "+ Signature",
+      "description": "Donnez vie à votre logo avec une animation courte et mémorable, pour vos intros et outros.",
+      "prix": "Sur devis, adapté à votre projet",
+      "categoriePortfolio": "Logo animé",
+      "populaire": false,
+      "ribbon": ""
+    },
+    {
+      "icone": "vsl",
+      "titre": "VSL",
+      "badge": "+ Vente",
+      "description": "Vidéos de vente structurées pour convaincre, du hook jusqu'à l'appel à l'action.",
+      "prix": "À partir de 40 000 FCFA",
+      "categoriePortfolio": "VSL",
+      "populaire": false,
+      "ribbon": ""
+    }
+  ]
+}
