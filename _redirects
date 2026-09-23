@@ -1,6 +1,7 @@
+# Anciennes pages supprimées → accueil
 /portfolio.html    /   301
 /portfolio         /   301
-/formations.html   /   301
-/formations        /   301
-/ressources.html   /   301
-/ressources        /   301
+
+# L'ancienne page "Formations" a été fusionnée dans "Produits et Formations" (ressources.html)
+/formations.html   /ressources.html   301
+/formations        /ressources.html   301

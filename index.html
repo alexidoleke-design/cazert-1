@@ -606,26 +606,63 @@
     font-size:.95rem;
     letter-spacing:.01em;
     cursor:pointer;
-    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease, color .2s ease;
+    position:relative;
+    overflow:hidden;
+    transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, border-color .25s ease, color .25s ease;
+    will-change:transform;
+  }
+  .btn:active{
+    transform:translateY(0) scale(.97);
   }
   .btn--primary{
     background:linear-gradient(120deg,var(--yellow),var(--orange));
+    background-size:200% 200%;
+    background-position:0% 50%;
     color:#08080A;
     border:none;
+    transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, background-position .5s ease;
+  }
+  .btn--primary::after{
+    content:'';
+    position:absolute;
+    top:0; left:-60%;
+    width:40%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
+    transform:skewX(-20deg);
+    transition:left .6s ease;
   }
   .btn--primary:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 28px rgba(255,107,0,.30);
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 14px 32px rgba(255,107,0,.38);
+    background-position:100% 50%;
+  }
+  .btn--primary:hover::after{
+    left:130%;
   }
   .btn--ghost{
     background:transparent;
     border:1px solid var(--border);
     color:var(--text);
   }
+  .btn--ghost::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:var(--orange);
+    opacity:0;
+    transform:scale(.85);
+    border-radius:inherit;
+    transition:opacity .25s ease, transform .25s ease;
+    z-index:-1;
+  }
   .btn--ghost:hover{
     border-color:var(--orange);
-    color:var(--orange);
-    transform:translateY(-2px);
+    color:#08080A;
+    transform:translateY(-3px) scale(1.03);
+  }
+  .btn--ghost:hover::before{
+    opacity:1;
+    transform:scale(1);
   }
 
   .divider{
@@ -691,6 +728,46 @@
     padding:40px 0;
     position:relative;
     overflow:hidden;
+    min-height:560px;
+    display:flex;
+    align-items:center;
+    background-color:#0A0A0D;
+    background-image:url('/uploads/hero-bg.jpg');
+    background-size:cover;
+    background-position:center 35%;
+    background-repeat:no-repeat;
+  }
+  .hero > .container{ width:100%; }
+  .hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(180deg, rgba(6,6,8,.55) 0%, rgba(6,6,8,.5) 40%, rgba(6,6,8,.9) 100%),
+      linear-gradient(100deg, rgba(6,6,8,.97) 0%, rgba(6,6,8,.88) 35%, rgba(6,6,8,.55) 62%, rgba(6,6,8,.35) 100%);
+    pointer-events:none;
+    z-index:1;
+  }
+  .hero .container{
+    text-shadow:0 2px 18px rgba(0,0,0,.85);
+  }
+  .hero .eyebrow,
+  .hero .section__title--big,
+  .hero .hero__text,
+  .hero .hero__proof,
+  .hero .hero__timecode{
+    text-shadow:0 2px 20px rgba(0,0,0,.9), 0 0 44px rgba(0,0,0,.7);
+  }
+  .hero .hero__text{ color:#D8D5D0; }
+  @media (max-width:640px){
+    .hero{
+      min-height:520px;
+      background-position:center 25%;
+    }
+    .hero::before{
+      background:
+        linear-gradient(190deg, rgba(6,6,8,.6) 0%, rgba(6,6,8,.55) 35%, rgba(6,6,8,.95) 100%);
+    }
   }
   .hero__inner{
     position:relative;
@@ -700,16 +777,6 @@
 
 
 
-
-  .hero__title{
-    font-family:'Anton',sans-serif;
-    font-size:clamp(1.8rem, 5vw, 4.2rem);
-    line-height:.95;
-    letter-spacing:.01em;
-    color:#FFFFFF;
-    text-shadow: 0 2px 24px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7);
-    margin-bottom:16px;
-  }
 
   .section__title--big{
     font-family:'Anton',sans-serif;
@@ -774,6 +841,37 @@
     letter-spacing:.05em;
   }
   .hero__timecode b{ color:var(--text); font-weight:700; }
+
+  /* SCROLL REVEAL */
+  .reveal{
+    opacity:0;
+    transform:translateY(32px);
+    transition:opacity .8s cubic-bezier(.16,.84,.44,1), transform .8s cubic-bezier(.16,.84,.44,1);
+    will-change:opacity, transform;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ transition:none !important; opacity:1 !important; transform:none !important; }
+    .hero .container > *{ animation:none !important; opacity:1 !important; transform:none !important; }
+  }
+
+  /* HERO entrance animation */
+  .hero .container > *{
+    opacity:0;
+    transform:translateY(24px);
+    animation:heroReveal .9s cubic-bezier(.16,.84,.44,1) forwards;
+  }
+  .hero .container > *:nth-child(1){ animation-delay:.05s; }
+  .hero .container > *:nth-child(2){ animation-delay:.15s; }
+  .hero .container > *:nth-child(3){ animation-delay:.28s; }
+  .hero .container > *:nth-child(4){ animation-delay:.4s; }
+  .hero .container > *:nth-child(5){ animation-delay:.52s; }
+  @keyframes heroReveal{
+    to{ opacity:1; transform:translateY(0); }
+  }
 
   /* SECTION generic spacing */
   .section{ padding:88px 0; }
@@ -1092,6 +1190,10 @@
 
   @media (max-width:900px){
     .portfolio__grid{ grid-template-columns:repeat(2,1fr); }
+  }
+
+  @media (max-width:1050px) and (min-width:761px){
+    .nav__links{ gap:16px; font-size:.7rem; }
   }
 
   @media (max-width:760px){
@@ -1767,6 +1869,7 @@
       <a href="#realisations">Réalisations</a>
       <a href="#services">Services</a>
       <a href="#recurrent">Offre mensuelle</a>
+      <a href="/ressources.html">Produits et Formations</a>
       <a href="#apropos">À propos</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
@@ -1784,8 +1887,8 @@
 
   <section class="section hero" id="portfolio-hero">
     <div class="container" style="position:relative;z-index:2;">
-      <div class="eyebrow"><b>◆</b> Studio de production vidéo</div>
-      <h1 class="section__title section__title--big">Transformez vos rushs en vidéos qui captent l'attention.</h1>
+      <div class="eyebrow"><b>◆</b> SERVICE DE MONTAGE DE VIDEO</div>
+      <h1 class="section__title section__title--big">Montage vidéo dynamique et professionnel</h1>
       <p class="hero__text" style="margin-top:18px;max-width:640px;">Cazert_Studio accompagne créateurs, entrepreneurs et entreprises dans le montage de vidéos professionnelles pour YouTube, les réseaux sociaux et la publicité. Publiez plus, sans gérer vous-même la post-production.</p>
 
       <div class="hero__proof">
@@ -2229,11 +2332,95 @@
     <div class="footer__links">
       <a href="#apropos">À propos</a>
       <a href="#realisations">Réalisations</a>
+      <a href="/ressources.html">Produits et Formations</a>
       <a href="#contact">Contact</a>
       <a href="legal.html">Mentions légales</a>
     </div>
   </div>
 </footer>
+
+<script>
+  // ── Animations d'apparition au scroll ──────────────────────
+  // Générique : marche aussi sur le contenu injecté dynamiquement
+  // (portfolio, offres, détails services) via MutationObserver.
+  (function(){
+    var REVEAL_SELECTORS = [
+      '.section__heading',
+      '.section__intro',
+      '.problem__lead',
+      '.problem__text',
+      '.problem__cazert',
+      '.why-item',
+      '.process-step',
+      '.recurrent-card',
+      '.portfolio-category',
+      '.service-detail',
+      '.offer-card',
+      '.vid-card',
+      '.testimonials__eyebrow',
+      '.testimonials__track-wrap',
+      '.clients-marquee',
+      '.faq .container > div > div',
+      '.contact__panel'
+    ];
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var io = (!reduceMotion && 'IntersectionObserver' in window) ? new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -60px 0px' }) : null;
+
+    var armed = new WeakSet();
+
+    function armElement(el, groupIndex){
+      if (armed.has(el)) return;
+      armed.add(el);
+      if (reduceMotion) return;
+      el.classList.add('reveal');
+      if (typeof groupIndex === 'number' && groupIndex > 0) {
+        el.style.transitionDelay = Math.min(groupIndex * 0.08, 0.4) + 's';
+      }
+      if (io) {
+        io.observe(el);
+      } else {
+        el.classList.add('is-visible');
+      }
+    }
+
+    function scan(root){
+      REVEAL_SELECTORS.forEach(function(sel){
+        root.querySelectorAll(sel).forEach(function(el){
+          if (armed.has(el)) return;
+          var parent = el.parentElement;
+          var idx;
+          if (parent) {
+            if (!parent.__revealCount) parent.__revealCount = {};
+            idx = parent.__revealCount[sel] || 0;
+            parent.__revealCount[sel] = idx + 1;
+          }
+          armElement(el, idx);
+        });
+      });
+    }
+
+    function start(){
+      scan(document);
+      var mo = new MutationObserver(function(){ scan(document); });
+      mo.observe(document.body, { childList:true, subtree:true });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', start);
+    } else {
+      start();
+    }
+  })();
+</script>
 
 <script>
   // Menu mobile
@@ -2654,5 +2841,26 @@
     <path fill="#fff" d="M16.004 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.26.6 4.38 1.63 6.22L3.2 28.8l6.75-1.77a12.74 12.74 0 0 0 6.05 1.54h.005c7.07 0 12.8-5.73 12.8-12.8 0-3.42-1.33-6.63-3.75-9.05a12.72 12.72 0 0 0-9.05-3.52zm0 23.42h-.004a10.6 10.6 0 0 1-5.4-1.48l-.387-.23-4.006 1.05 1.07-3.9-.252-.4a10.58 10.58 0 0 1-1.63-5.66c0-5.86 4.77-10.62 10.63-10.62a10.56 10.56 0 0 1 7.51 3.11 10.55 10.55 0 0 1 3.11 7.52c0 5.86-4.78 10.62-10.64 10.62zm5.83-7.96c-.32-.16-1.89-.93-2.18-1.04-.29-.11-.51-.16-.72.16-.21.32-.83 1.04-1.02 1.25-.19.21-.38.24-.7.08-.32-.16-1.34-.5-2.55-1.58-.94-.84-1.58-1.87-1.76-2.19-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.75-.99-2.39-.26-.63-.53-.54-.72-.55l-.62-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.65 0 1.56 1.14 3.07 1.3 3.28.16.21 2.24 3.42 5.42 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.89-.77 2.15-1.52.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.61-.37z"/>
   </svg>
 </a>
+<!-- Netlify Identity : nécessaire ici (racine du site) pour intercepter les liens
+     d'invitation / de confirmation / de réinitialisation de mot de passe envoyés
+     par mail (ils redirigent vers "/", pas directement vers "/admin/"). Sans ce
+     script, le lien atterrit sur la page d'accueil "normale" sans rien faire. -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function (user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function () {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+    // Une fois l'inscription/le mot de passe validé depuis la fenêtre ouverte
+    // automatiquement, on renvoie directement vers l'espace admin.
+    window.netlifyIdentity.on("signup", function () {
+      document.location.href = "/admin/";
+    });
+  }
+</script>
 </body>
 </html>

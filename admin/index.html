@@ -1,11 +1,103 @@
 <!doctype html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Espace admin — Cazert_Studio</title>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#FF6B00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Couleur de fond immédiate (avant même le chargement de Decap CMS),
+       pour éviter un flash blanc et rester dans l'identité du site. */
+    html, body{
+      background:#0A0A0D;
+      margin:0;
+    }
+
+    /* ── Bandeau d'identité Cazert_Studio ──────────────────────────
+       Ce bandeau est ENTIÈREMENT indépendant de l'interface de Decap
+       CMS : c'est un élément ajouté par-dessus, qui ne touche à aucun
+       composant interne du CMS. Il reste donc fiable, même si une
+       future mise à jour de Decap CMS change son propre design. */
+    #cazert-admin-bar{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:52px;
+      z-index:100000;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 18px;
+      background:#0A0A0D;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      font-family:'Inter',sans-serif;
+      box-sizing:border-box;
+    }
+    #cazert-admin-bar .cazert-admin-brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    #cazert-admin-bar img{
+      height:28px;
+      width:auto;
+      display:block;
+    }
+    #cazert-admin-bar .cazert-admin-title{
+      font-family:'Anton',sans-serif;
+      letter-spacing:.02em;
+      font-size:.78rem;
+      text-transform:uppercase;
+      color:#F5F5F2;
+    }
+    #cazert-admin-bar .cazert-admin-title span{
+      color:#FF6B00;
+    }
+    #cazert-admin-bar a.cazert-admin-back{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:.78rem;
+      font-weight:600;
+      color:#F5F5F2;
+      text-decoration:none;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      transition:border-color .2s ease, color .2s ease, background .2s ease;
+    }
+    #cazert-admin-bar a.cazert-admin-back:hover{
+      border-color:#FF6B00;
+      color:#0A0A0D;
+      background:linear-gradient(120deg,#FFD600,#FF6B00);
+    }
+
+    /* On pousse le contenu de Decap CMS sous le bandeau */
+    #nc-root{
+      margin-top:52px;
+    }
+  </style>
 </head>
 <body>
+
+  <div id="cazert-admin-bar">
+    <div class="cazert-admin-brand">
+      <img src="/uploads/logo-cazert.png" alt="Cazert Studio">
+      <div class="cazert-admin-title">Espace admin <span>·</span> Cazert_Studio</div>
+    </div>
+    <a class="cazert-admin-back" href="/" target="_blank" rel="noopener">← Retour au site</a>
+  </div>
+
+  <div id="nc-root"></div>
+
   <!-- Authentification Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 

@@ -1,0 +1,8 @@
+{
+  "categories": [
+    { "id": "premiere-pro", "nom": "Adobe Première Pro", "logo": "" },
+    { "id": "photoshop", "nom": "Adobe Photoshop", "logo": "" },
+    { "id": "montage", "nom": "Montage vidéo", "logo": "" },
+    { "id": "motion-design", "nom": "Motion design", "logo": "" }
+  ]
+}

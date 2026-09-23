@@ -2,11 +2,19 @@
   "formations": [
     {
       "statut": "publie",
+      "categorieId": "montage",
       "image": "https://i.ytimg.com/vi/7Av3rLSwy5E/hqdefault.jpg",
       "titre": "Montage vidéo pour créateurs",
       "badge": "Bestseller",
       "sousTitre": "De zéro à une vidéo publiée",
       "descriptionCourte": "Apprenez les bases du montage, du rythme et de l'export, avec Premiere Pro / CapCut.",
+      "descriptionLongue": "Une formation complète pour partir de zéro et arriver à publier des vidéos montées avec rythme et clarté. Vous apprendrez le dérushage, les coupes, le sous-titrage, le mixage audio de base et l'export optimisé pour chaque plateforme.",
+      "pointsForts": [
+        "8 modules progressifs, à votre rythme",
+        "Exercices pratiques sur de vrais rushs",
+        "Compatible Premiere Pro et CapCut",
+        "Accès à vie aux mises à jour du contenu"
+      ],
       "duree": "6h de contenu",
       "modules": 8,
       "prix": 25000,
@@ -15,11 +23,19 @@
     },
     {
       "statut": "publie",
+      "categorieId": "motion-design",
       "image": "https://i.ytimg.com/vi/c5RPexbZ4N4/hqdefault.jpg",
       "titre": "Motion Design avancé",
-      "badge": "Nouveau",
+      "badge": "Promo",
       "sousTitre": "Titrages, logos animés, habillages",
       "descriptionCourte": "Créez des animations professionnelles pour vos vidéos et vos marques.",
+      "descriptionLongue": "Passez au niveau supérieur avec des animations construites comme dans l'industrie : titrages dynamiques, logos animés et habillages graphiques cohérents avec une identité de marque.",
+      "pointsForts": [
+        "12 modules, du principe d'animation à la composition finale",
+        "Fichiers projet After Effects fournis",
+        "Étude de cas sur de vraies marques",
+        "Support par WhatsApp pendant la formation"
+      ],
       "duree": "9h de contenu",
       "modules": 12,
       "prix": 45000,
@@ -28,11 +44,18 @@
     },
     {
       "statut": "bientot",
+      "categorieId": "montage",
       "image": "https://i.ytimg.com/vi/_byMcrNm164/hqdefault.jpg",
       "titre": "VSL & Vidéos publicitaires",
       "badge": null,
       "sousTitre": "Vendre avec la vidéo",
       "descriptionCourte": "Structurez et montez des vidéos qui convertissent pour les réseaux et le paid ads.",
+      "descriptionLongue": "Apprenez à construire des vidéos publicitaires et des VSL qui retiennent l'attention et convertissent : structure narrative, rythme, accroche et appel à l'action.",
+      "pointsForts": [
+        "6 modules orientés conversion",
+        "Templates de structure de script",
+        "Cas pratiques Facebook/TikTok/YouTube Ads"
+      ],
       "duree": "5h de contenu",
       "modules": 6,
       "prix": 39000,
