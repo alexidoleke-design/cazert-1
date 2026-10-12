@@ -1,83 +1,83 @@
 {
   "ressources": [
     {
-      "statut": "publie",
-      "categorieId": "premiere-pro",
-      "image": "https://i.ytimg.com/vi/7Av3rLSwy5E/hqdefault.jpg",
-      "titre": "Montage Express — Extension Premiere Pro",
-      "badge": "Promo",
-      "sousTitre": "Automatisez vos coupes",
-      "descriptionCourte": "Détectez les silences, découpez et synchronisez vos vidéos au rythme de l'audio, directement dans Premiere Pro.",
-      "descriptionLongue": "Un plugin Premiere Pro pensé pour vous faire gagner un temps considérable sur le montage : détection automatique des silences, découpe intelligente, et synchronisation sur le rythme de la musique en un clic.",
+      "badge": "Nouveau",
       "pointsForts": [
         "Détection automatique des silences",
         "Synchronisation sur le rythme audio",
         "Compatible Premiere Pro 2022 et versions supérieures",
         "Windows & macOS"
       ],
-      "type": "Plugin Premiere Pro",
-      "prix": 19900,
+      "descriptionLongue": "Un plugin Premiere Pro pensé pour vous faire gagner un temps considérable sur le montage : détection automatique des silences, découpe intelligente, et synchronisation sur le rythme de la musique en un clic.",
       "ancienPrix": null,
-      "lienPaiement": "https://chariow.com/"
+      "lienPaiement": "https://chariow.com/",
+      "prix": 19900,
+      "categorieId": "premiere-pro",
+      "titre": "Montage Express — Extension Premiere Pro",
+      "statut": "publie",
+      "descriptionCourte": "Détectez les silences, découpez et synchronisez vos vidéos au rythme de l'audio, directement dans Premiere Pro.",
+      "sousTitre": "Automatisez vos coupes",
+      "type": "Plugin Premiere Pro",
+      "image": "https://i.ytimg.com/vi/7Av3rLSwy5E/hqdefault.jpg"
     },
     {
-      "statut": "publie",
-      "categorieId": "premiere-pro",
-      "image": "https://i.ytimg.com/vi/_byMcrNm164/hqdefault.jpg",
-      "titre": "Pack Presets Cinématiques",
       "badge": "Bestseller",
-      "sousTitre": "20 presets pour un rendu pro",
-      "descriptionCourte": "Une collection de presets prêts à l'emploi pour donner un look cinéma à vos vidéos, compatibles Premiere Pro et DaVinci Resolve.",
-      "descriptionLongue": "Ce pack rassemble 20 presets conçus et testés sur de vrais projets de production, pour vous éviter des heures d'étalonnage manuel. Compatible Premiere Pro, DaVinci Resolve, Final Cut Pro et After Effects.",
       "pointsForts": [
         "20 presets cinématiques prêts à l'emploi",
         "Compatible Premiere Pro, DaVinci Resolve, FCP, After Effects",
         "Fichier haute précision",
         "Mise à jour gratuite à vie"
       ],
-      "type": "Pack Presets",
-      "prix": 15000,
+      "descriptionLongue": "Ce pack rassemble 20 presets conçus et testés sur de vrais projets de production, pour vous éviter des heures d'étalonnage manuel. Compatible Premiere Pro, DaVinci Resolve, Final Cut Pro et After Effects.",
       "ancienPrix": 20000,
-      "lienPaiement": "https://chariow.com/"
+      "lienPaiement": "https://chariow.com/",
+      "prix": 15000,
+      "categorieId": "premiere-pro",
+      "titre": "Pack Presets Cinématiques",
+      "statut": "publie",
+      "descriptionCourte": "Une collection de presets prêts à l'emploi pour donner un look cinéma à vos vidéos, compatibles Premiere Pro et DaVinci Resolve.",
+      "sousTitre": "20 presets pour un rendu pro",
+      "type": "Pack Presets",
+      "image": "https://i.ytimg.com/vi/_byMcrNm164/hqdefault.jpg"
     },
     {
-      "statut": "publie",
-      "categorieId": "photoshop",
-      "image": "https://i.ytimg.com/vi/c5RPexbZ4N4/hqdefault.jpg",
-      "titre": "Templates Motion Design",
       "badge": null,
-      "sousTitre": "Titrages & habillages animés",
-      "descriptionCourte": "10 templates After Effects modifiables pour vos titrages, transitions et habillages de vidéos.",
-      "descriptionLongue": "10 templates After Effects entièrement personnalisables (couleurs, textes, durées) pour habiller vos vidéos sans repartir de zéro. Idéal pour les créateurs de contenu et les monteurs qui veulent gagner du temps sur l'habillage graphique.",
       "pointsForts": [
         "10 templates After Effects modifiables",
         "Fichiers organisés et commentés",
         "Rendu en quelques clics",
         "Tutoriel d'installation inclus"
       ],
-      "type": "Templates",
-      "prix": 20000,
+      "descriptionLongue": "10 templates After Effects entièrement personnalisables (couleurs, textes, durées) pour habiller vos vidéos sans repartir de zéro. Idéal pour les créateurs de contenu et les monteurs qui veulent gagner du temps sur l'habillage graphique.",
       "ancienPrix": null,
-      "lienPaiement": "https://chariow.com/"
+      "lienPaiement": "https://chariow.com/",
+      "prix": 20000,
+      "categorieId": "photoshop",
+      "titre": "Templates Motion Design",
+      "statut": "publie",
+      "descriptionCourte": "10 templates After Effects modifiables pour vos titrages, transitions et habillages de vidéos.",
+      "sousTitre": "Titrages & habillages animés",
+      "type": "Templates",
+      "image": "https://i.ytimg.com/vi/c5RPexbZ4N4/hqdefault.jpg"
     },
     {
-      "statut": "bientot",
-      "categorieId": "photoshop",
-      "image": "https://i.ytimg.com/vi/_byMcrNm164/hqdefault.jpg",
-      "titre": "Pack Presets CapCut",
       "badge": null,
-      "sousTitre": "Montage rapide sur mobile",
-      "descriptionCourte": "Des presets prêts à l'emploi pour monter plus vite sur CapCut, idéal pour les Shorts et Reels.",
-      "descriptionLongue": "Une sélection de presets CapCut pensés pour les formats courts (Shorts, Reels, TikTok) : transitions, effets de texte et réglages colorimétriques prêts à l'emploi.",
       "pointsForts": [
         "Compatible CapCut mobile & desktop",
         "Pensé pour Shorts, Reels et TikTok",
         "Installation en un clic"
       ],
-      "type": "Preset",
-      "prix": 10000,
+      "descriptionLongue": "Une sélection de presets CapCut pensés pour les formats courts (Shorts, Reels, TikTok) : transitions, effets de texte et réglages colorimétriques prêts à l'emploi.",
       "ancienPrix": null,
-      "lienPaiement": "https://chariow.com/"
+      "lienPaiement": "https://chariow.com/",
+      "prix": 10000,
+      "categorieId": "photoshop",
+      "titre": "Pack Presets CapCut",
+      "statut": "bientot",
+      "descriptionCourte": "Des presets prêts à l'emploi pour monter plus vite sur CapCut, idéal pour les Shorts et Reels.",
+      "sousTitre": "Montage rapide sur mobile",
+      "type": "Preset",
+      "image": "https://i.ytimg.com/vi/_byMcrNm164/hqdefault.jpg"
     }
   ]
 }
