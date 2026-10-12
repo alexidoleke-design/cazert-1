@@ -32,9 +32,10 @@ collections:
   # Alimente directement la section "Nos réalisations" de la page
   # d'accueil : chaque catégorie y affiche son titre, sa description
   # courte et un aperçu de 3 vidéos.
-  # Le champ "Texte détaillé" et la liste complète des vidéos sont
-  # utilisés dans la fenêtre qui s'ouvre depuis le bouton
-  # "Voir des exemples" de la section "Nos services".
+  # Les champs "Résumé" et "Texte détaillé" alimentent la section
+  # "Le détail de chaque service" (résumé visible + bouton "En savoir plus").
+  # La liste complète des vidéos est utilisée dans la fenêtre qui s'ouvre
+  # depuis le bouton "Voir des exemples" de la section "Nos services".
   # ─────────────────────────────────────────────
   - name: "portfolio"
     label: "🎬 Réalisations (accueil)"
@@ -63,11 +64,16 @@ collections:
                 widget: "list"
                 allow_add: true
                 hint: "📌 Les 3 premières vidéos de cette liste s'affichent directement sur la page d'accueil, dans « Nos réalisations ». La liste complète (avec les suivantes) apparaît dans la fenêtre « Voir des exemples » de la section « Nos services ». Collez un lien YouTube complet ou un lien Shorts par ligne."
-              - label: "Texte détaillé du service"
+              - label: "Résumé du service (2 paragraphes maximum)"
+                name: "resume"
+                widget: "markdown"
+                required: false
+                hint: "Toujours visible dans « Le détail de chaque service » sur l'accueil. 2 paragraphes maximum : le 1er en **gras** (l'accroche), le 2e qui résume l'essentiel. Si ce champ est vide, les 2 premiers paragraphes du texte détaillé ci-dessous servent de résumé."
+              - label: "Texte détaillé du service (bouton « En savoir plus »)"
                 name: "seoText"
                 widget: "markdown"
                 required: false
-                hint: "Affiché dans la fenêtre « Nos services » (bouton « Voir des exemples »). Tout va dans ce même champ : présentation, FAQ, tarifs. Utilisez ## pour un sous-titre (ex: ## Questions fréquentes) et **texte en gras** pour un point important."
+                hint: "Affiché quand le visiteur clique sur « En savoir plus », sous le résumé, dans « Le détail de chaque service » sur l'accueil. Tout va dans ce même champ : présentation, FAQ, tarifs. Utilisez ## pour un sous-titre (ex: ## Questions fréquentes) et **texte en gras** pour un point important."
 
   # ─────────────────────────────────────────────
   # 🧩 NOS SERVICES (cartes) — édite content/services.json

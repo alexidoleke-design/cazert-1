@@ -731,23 +731,8 @@
     min-height:560px;
     display:flex;
     align-items:center;
-    background-color:#0A0A0D;
-    background-image:url('/uploads/hero-bg.jpg');
-    background-size:cover;
-    background-position:center 35%;
-    background-repeat:no-repeat;
   }
   .hero > .container{ width:100%; }
-  .hero::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:
-      linear-gradient(180deg, rgba(6,6,8,.55) 0%, rgba(6,6,8,.5) 40%, rgba(6,6,8,.9) 100%),
-      linear-gradient(100deg, rgba(6,6,8,.97) 0%, rgba(6,6,8,.88) 35%, rgba(6,6,8,.55) 62%, rgba(6,6,8,.35) 100%);
-    pointer-events:none;
-    z-index:1;
-  }
   .hero .container{
     text-shadow:0 2px 18px rgba(0,0,0,.85);
   }
@@ -762,11 +747,6 @@
   @media (max-width:640px){
     .hero{
       min-height:520px;
-      background-position:center 25%;
-    }
-    .hero::before{
-      background:
-        linear-gradient(190deg, rgba(6,6,8,.6) 0%, rgba(6,6,8,.55) 35%, rgba(6,6,8,.95) 100%);
     }
   }
   .hero__inner{
@@ -1363,7 +1343,7 @@
     color:#2A241C;
   }
 
-  /* NOS SERVICES — descriptions complètes, sans bouton "en savoir plus" */
+  /* NOS SERVICES — résumé visible + détails dépliables (bouton "En savoir plus") */
   .service-detail{
     max-width:760px;
     margin:0 auto 48px auto;
@@ -1401,6 +1381,19 @@
   }
   .service-detail .cat-faq__a{
     color:var(--text);
+  }
+  .service-detail .service-more-btn{
+    margin-top:4px;
+  }
+  .service-detail .service-detail__more{
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .service-more-btn:focus-visible{
+    outline:2px solid var(--yellow);
+    outline-offset:4px;
+    border-radius:4px;
   }
 
   /* JE M'OCCUPE DU MONTAGE — fond blanc, texte noir */
@@ -2622,11 +2615,35 @@
     return section;
   }
 
-  // ── Description complète de chaque service (section "Nos services") ──
-  // Affichée intégralement, sans bouton "en savoir plus" : texte SEO (Markdown) + FAQ.
+  // ── Détail de chaque service (section "Le détail de chaque service") ──
+  // Affiche un RÉSUMÉ (2 paragraphes maximum) toujours visible, puis un bouton
+  // « En savoir plus » qui déplie tout le reste (texte détaillé, tarifs, FAQ).
+  //  - Résumé = champ "resume" (admin). S'il est vide : repli automatique sur
+  //    les 2 premiers paragraphes du texte détaillé (champ "seoText").
+  function splitBlocks(md) {
+    return (md || '').replace(/\r\n/g, '\n').trim().split(/\n\s*\n/).filter(function(b){
+      return b.trim() !== '';
+    });
+  }
+
   function buildCategoryDetail(cat, catIndex) {
-    var hasSeoText = cat.seoText && cat.seoText.trim().length > 0;
-    if (!hasSeoText) return null;
+    var resumeBlocks = splitBlocks(cat.resume);
+    var detailBlocks = splitBlocks(cat.seoText);
+    if (!resumeBlocks.length && !detailBlocks.length) return null;
+
+    var summaryBlocks;
+    if (resumeBlocks.length) {
+      // 2 paragraphes max affichés ; un éventuel excédent passe dans « En savoir plus »
+      summaryBlocks = resumeBlocks.slice(0, 2);
+      detailBlocks = resumeBlocks.slice(2).concat(detailBlocks);
+    } else {
+      // Repli : les 2 premiers paragraphes (hors titres/listes) servent de résumé
+      var n = 0;
+      while (n < 2 && n < detailBlocks.length && !/^(##\s|-\s)/.test(detailBlocks[n].trim())) n++;
+      summaryBlocks = detailBlocks.slice(0, n);
+      detailBlocks = detailBlocks.slice(n);
+    }
+    if (!summaryBlocks.length) { summaryBlocks = detailBlocks; detailBlocks = []; }
 
     var wrap = document.createElement('div');
     wrap.className = 'service-detail';
@@ -2636,10 +2653,31 @@
     title.textContent = cat.titre;
     wrap.appendChild(title);
 
-    var textWrap = document.createElement('div');
-    textWrap.className = 'service-more';
-    textWrap.innerHTML = renderMarkdown(cat.seoText);
-    wrap.appendChild(textWrap);
+    var summary = document.createElement('div');
+    summary.className = 'service-more service-detail__summary';
+    summary.innerHTML = renderMarkdown(summaryBlocks.join('\n\n'));
+    wrap.appendChild(summary);
+
+    if (detailBlocks.length) {
+      var panelId = 'service-more-' + catIndex;
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'service-more-btn';
+      btn.id = panelId + '-btn';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-controls', panelId);
+      btn.innerHTML = 'En savoir plus <span class="service-more-btn__arrow">▾</span>';
+      btn.addEventListener('click', function(){ toggleMore(panelId); });
+      wrap.appendChild(btn);
+
+      var more = document.createElement('div');
+      more.className = 'service-more service-detail__more';
+      more.id = panelId;
+      more.style.display = 'none';
+      more.innerHTML = renderMarkdown(detailBlocks.join('\n\n'));
+      wrap.appendChild(more);
+    }
 
     return wrap;
   }

@@ -31,7 +31,7 @@
       position:fixed;
       top:0; left:0; right:0;
       height:52px;
-      z-index:100000;
+      z-index:250; /* inférieur au z-index 300 de l'entête Decap : ne le recouvre jamais */
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -103,6 +103,48 @@
 
   <!-- Decap CMS (successeur de Netlify CMS) -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <script>
+    /* ── Décalage de l'entête de Decap CMS sous le bandeau Cazert_Studio ──
+       Decap place sa barre d'enregistrement (boutons « Enregistrer / Publier »)
+       en position:fixed; top:0 → elle passait sous notre bandeau de 52 px.
+       On repère ces barres (fixes/collantes, collées en haut, hauteur de barre)
+       et on les descend de la hauteur du bandeau. Aucun effet si rien n'est trouvé. */
+    (function () {
+      var BAR_H = 52;
+      var root = document.getElementById('nc-root');
+      if (!root || !window.MutationObserver) return;
+
+      function shiftHeaders() {
+        var nodes = root.querySelectorAll('*');
+        for (var i = 0; i < nodes.length; i++) {
+          var el = nodes[i];
+          if (el.dataset && el.dataset.czShifted) continue;
+          var cs = window.getComputedStyle(el);
+          if ((cs.position === 'fixed' || cs.position === 'sticky') && cs.top === '0px') {
+            var h = el.offsetHeight;
+            if (h > 0 && h <= 100) {
+              el.style.setProperty('top', BAR_H + 'px', 'important');
+              el.dataset.czShifted = '1';
+            }
+          }
+        }
+      }
+
+      var timer = null, last = 0;
+      function schedule() {
+        var now = Date.now();
+        if (timer) return;
+        var wait = Math.max(0, 200 - (now - last));
+        timer = setTimeout(function () { timer = null; last = Date.now(); shiftHeaders(); }, wait);
+      }
+
+      new MutationObserver(schedule).observe(root, { childList: true, subtree: true });
+      window.addEventListener('hashchange', schedule);
+      window.addEventListener('resize', schedule);
+      schedule();
+    })();
+  </script>
 
   <script>
     if (window.netlifyIdentity) {
