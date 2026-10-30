@@ -21,24 +21,26 @@
       "image": "/uploads/chatgpt-image-30-oct.-2026-18_54_49.png"
     },
     {
-      "badge": "Bestseller",
+      "badge": "Nouveau",
       "pointsForts": [
-        "20 presets cinématiques prêts à l'emploi",
-        "Compatible Premiere Pro, DaVinci Resolve, FCP, After Effects",
-        "Fichier haute précision",
-        "Mise à jour gratuite à vie"
+        "👆 Aperçu instantané : un clic sur le visuel lance la lecture (vidéo, son ou image).",
+        "🔎 Recherche et filtres dans chaque bibliothèque.",
+        "⭐ Favoris : retrouvez vos ressources préférées au même endroit.",
+        "➕ Personnalisable : ajoutez vos propres fichiers par glisser-déposer ou sélection multiple.",
+        "📥 Import direct dans votre projet Premiere Pro.",
+        "🌍 Interface bilingue : français / anglais."
       ],
-      "descriptionLongue": "Ce pack rassemble 20 presets conçus et testés sur de vrais projets de production, pour vous éviter des heures d'étalonnage manuel. Compatible Premiere Pro, DaVinci Resolve, Final Cut Pro et After Effects.",
-      "ancienPrix": 20000,
-      "lienPaiement": "https://chariow.com/",
-      "prix": 15000,
+      "descriptionLongue": "Stock – Le panneau tout-en-un pour Premiere Pro\n\nStock est une extension qui regroupe plus de 460 ressources directement dans Premiere Pro : effets sonores, transitions, icônes, Green Screens, overlays, Film Mattes et B-Rolls.\n\nGrâce à ses bibliothèques intégrées, vous pouvez rechercher, prévisualiser, télécharger et importer vos ressources en quelques clics, sans quitter votre logiciel de montage.\n\nStock propose également une recherche avec filtres, un système de favoris et la possibilité d'ajouter vos propres fichiers.\n\nCompatible Windows et Mac, Stock simplifie votre workflow et vous permet de gagner du temps tout en gardant toutes vos ressources à portée de main.",
+      "ancienPrix": 7500,
+      "lienPaiement": "https://simple-clic.mymaketou.shop/products/stock/checkout",
+      "prix": 4900,
       "categorieId": "premiere-pro",
-      "titre": "Pack Presets Cinématiques",
+      "titre": "Stock",
       "statut": "publie",
-      "descriptionCourte": "Une collection de presets prêts à l'emploi pour donner un look cinéma à vos vidéos, compatibles Premiere Pro et DaVinci Resolve.",
-      "sousTitre": "20 presets pour un rendu pro",
-      "type": "Pack Presets",
-      "image": "https://i.ytimg.com/vi/_byMcrNm164/hqdefault.jpg"
+      "descriptionCourte": "Bibliotheque de ressources pour Premiere Pro:\nSons, transitions, icônes, green screens, overlays et B-roll sans quitter votre logiciel de montage.",
+      "sousTitre": "Le panneau de ressource tout-en-un pour Premiere Pro",
+      "type": "Plugin",
+      "image": "/uploads/chatgpt-image-30-oct.-2026-19_25_53.png"
     },
     {
       "badge": null,
