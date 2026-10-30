@@ -63,23 +63,24 @@
       "image": "/uploads/chatgpt-image-30-oct.-2026-18_52_17.png"
     },
     {
-      "badge": null,
+      "badge": "Nouveau",
       "pointsForts": [
-        "Compatible CapCut mobile & desktop",
-        "Pensé pour Shorts, Reels et TikTok",
-        "Installation en un clic"
+        "Sous-titrage automatique — Génère et synchronise automatiquement les sous-titres avec la parole.",
+        "Personnalisation avancée — Polices, couleurs, animations et styles personnalisés.",
+        "Plusieurs formats d'export — Vidéo sous-titrée, SRT, PDF et TXT.",
+        "100 % hors ligne — Aucune connexion Internet ni abonnement nécessaire après installation."
       ],
-      "descriptionLongue": "Une sélection de presets CapCut pensés pour les formats courts (Shorts, Reels, TikTok) : transitions, effets de texte et réglages colorimétriques prêts à l'emploi.",
-      "ancienPrix": null,
-      "lienPaiement": "https://chariow.com/",
-      "prix": 10000,
+      "descriptionLongue": "Caption Plus est un logiciel qui permet de générer automatiquement des sous-titres professionnels pour vos vidéos, directement depuis votre ordinateur, sans abonnement et sans connexion Internet.\n\nIl synchronise les sous-titres avec la parole, permet de personnaliser leur apparence avec des styles, couleurs et animations, de corriger les textes et d'enregistrer ses propres réglages.\n\nVous pouvez exporter vos créations en vidéo sous-titrée, SRT, PDF ou TXT.\n\nCompatible avec les créateurs de contenu et les monteurs vidéo, Caption Plus simplifie le sous-titrage et accélère votre workflow grâce à une installation unique et un fonctionnement 100 % hors ligne.",
+      "ancienPrix": 12700,
+      "lienPaiement": "https://simple-clic.mymaketou.shop/products/caption-generator/checkout",
+      "prix": 7900,
       "categorieId": "photoshop",
-      "titre": "Pack Presets CapCut",
-      "statut": "bientot",
-      "descriptionCourte": "Des presets prêts à l'emploi pour monter plus vite sur CapCut, idéal pour les Shorts et Reels.",
-      "sousTitre": "Montage rapide sur mobile",
-      "type": "Preset",
-      "image": "https://i.ytimg.com/vi/_byMcrNm164/hqdefault.jpg"
+      "titre": "Caption Plus",
+      "statut": "publie",
+      "descriptionCourte": "Un logiciel qui permet de générer automatiquement des sous-titres professionnels pour vos vidéos",
+      "sousTitre": "Logiciel de sous-titrage automatique et création de vidéos réels",
+      "type": "Plugin",
+      "image": "/uploads/chatgpt-image-30-oct.-2026-18_59_31.png"
     }
   ]
 }
