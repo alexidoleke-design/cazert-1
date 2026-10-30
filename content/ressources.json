@@ -3,22 +3,22 @@
     {
       "badge": "Nouveau",
       "pointsForts": [
-        "Détection automatique des silences",
+        "Panel de transcription illimitée intégré directement à Premiere Pro ",
         "Synchronisation sur le rythme audio",
         "Compatible Premiere Pro 2022 et versions supérieures",
         "Windows & macOS"
       ],
-      "descriptionLongue": "Un plugin Premiere Pro pensé pour vous faire gagner un temps considérable sur le montage : détection automatique des silences, découpe intelligente, et synchronisation sur le rythme de la musique en un clic.",
-      "ancienPrix": null,
-      "lienPaiement": "https://chariow.com/",
-      "prix": 19900,
+      "descriptionLongue": "🎬 **Pro Caption – Plugin de sous-titrage pour Premiere Pro**\n\nPro Caption est un outil de transcription et de sous-titrage automatique qui regroupe deux applications : un panel intégré directement à Premiere Pro et un logiciel autonome sur ordinateur.\n\nIl permet de générer, corriger et exporter des sous-titres aux formats SRT, TXT et PDF, avec un traitement 100 % local, sans abonnement et sans envoyer vos vidéos sur Internet.\n\nCompatible avec Windows et Mac, Pro Caption simplifie votre workflow et vous fait gagner du temps dans vos montages vidéo.\n",
+      "ancienPrix": 7900,
+      "lienPaiement": "https://simple-clic.mymaketou.shop/products/pro-caption/checkout",
+      "prix": 4900,
       "categorieId": "premiere-pro",
-      "titre": "Montage Express — Extension Premiere Pro",
+      "titre": "Pro_Caption",
       "statut": "publie",
-      "descriptionCourte": "Détectez les silences, découpez et synchronisez vos vidéos au rythme de l'audio, directement dans Premiere Pro.",
-      "sousTitre": "Automatisez vos coupes",
+      "descriptionCourte": "Plugin de génération de sous-titre pour première pro sans abonnement",
+      "sousTitre": " Plugin pour Premiere Pro",
       "type": "Plugin Premiere Pro",
-      "image": "https://i.ytimg.com/vi/7Av3rLSwy5E/hqdefault.jpg"
+      "image": "/uploads/chatgpt-image-30-oct.-2026-18_54_49.png"
     },
     {
       "badge": "Bestseller",
