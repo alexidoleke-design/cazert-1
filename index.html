@@ -549,15 +549,6 @@
     overflow-x:hidden;
     padding-top:72px;
   }
-  body::before{
-    content:'';
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:0;
-    background-image:repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 3px);
-    opacity:.5;
-  }
   h1,h2,h3{ margin:0; font-weight:400; }
   p{ margin:0; }
   a{ color:inherit; text-decoration:none; }
@@ -641,7 +632,7 @@
   }
   .btn--ghost{
     background:transparent;
-    border:1px solid var(--border);
+    border:1px solid #4A4436;
     color:var(--text);
   }
   .btn--ghost::before{
@@ -668,7 +659,7 @@
   .divider{
     position:relative;
     height:1px;
-    background:var(--border);
+    background:#4A4436;
     max-width:1140px;
     margin:0 auto;
   }
@@ -854,7 +845,7 @@
   }
 
   /* SECTION generic spacing */
-  .section{ padding:88px 0; }
+  .section{ padding:88px 0; background:#1E1E1E; }
   .section__head{ max-width:680px; margin-bottom:48px; }
   .section__title{
     font-family:'Anton',sans-serif;
@@ -909,7 +900,7 @@
     max-width:88vw;
     flex-shrink:0;
     border-radius:16px;
-    border:1px solid var(--border);
+    border:1px solid #4A4436;
     display:block;
   }
   @keyframes testimonials-scroll{
@@ -939,10 +930,10 @@
     gap:24px;
     align-items:start;
     padding:26px 18px;
-    border-top:1px solid var(--border);
+    border-top:1px solid #4A4436;
     transition:background .2s ease;
   }
-  .service:last-child{ border-bottom:1px solid var(--border); }
+  .service:last-child{ border-bottom:1px solid #4A4436; }
   .service:hover{ background:var(--surface); }
   .service__index{
     font-family:'Space Mono',monospace;
@@ -966,7 +957,7 @@
   .reel{
     display:block;
     background:var(--surface);
-    border:1px solid var(--border);
+    border:1px solid #4A4436;
     border-radius:14px;
     overflow:hidden;
     transition:transform .2s ease, border-color .2s ease;
@@ -1034,11 +1025,11 @@
 
   /* CONTACT */
   .contact__panel{
-    border:1px solid var(--border);
+    border:1px solid rgba(255,166,0,.35);
     border-radius:18px;
     padding:56px 40px;
     text-align:center;
-    background:linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+    background:linear-gradient(135deg, rgba(255,214,0,.08), rgba(255,107,0,.05));
   }
   .contact__title{
     font-family:'Anton',sans-serif;
@@ -1069,7 +1060,7 @@
     align-items:center;
     gap:8px;
     padding:9px 16px;
-    border:1px solid var(--border);
+    border:1px solid #4A4436;
     border-radius:999px;
     font-family:'Space Mono',monospace;
     font-size:.78rem;
@@ -1122,14 +1113,14 @@
     outline:none;
     border-color:var(--yellow);
   }
-  .contact__form button{ align-self:flex-start; }
+  .contact__form button{ align-self:center; }
   @media (max-width:640px){
     .contact__form-row{ grid-template-columns:1fr; }
   }
 
   /* FOOTER */
   .footer{
-    border-top:1px solid var(--border);
+    border-top:1px solid #4A4436;
     padding:32px 0;
   }
   .footer__row{
@@ -1683,7 +1674,7 @@
   }
   .process-step{
     background:var(--surface);
-    border:1px solid var(--border);
+    border:1px solid #4A4436;
     border-radius:16px;
     padding:24px 18px;
     text-align:center;
@@ -1716,7 +1707,7 @@
   /* ── OFFRE RÉCURRENTE ── */
   .recurrent-panel{
     background:linear-gradient(135deg, rgba(255,214,0,.08), rgba(255,107,0,.05));
-    border:1px solid var(--border);
+    border:1px solid rgba(255,166,0,.35);
     border-radius:22px;
     padding:44px 36px;
   }
@@ -1728,7 +1719,7 @@
   }
   .recurrent-card{
     background:var(--surface);
-    border:1px solid var(--border);
+    border:1px solid #4A4436;
     border-radius:16px;
     padding:26px 22px;
     text-align:center;

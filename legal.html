@@ -43,15 +43,6 @@
     position:relative;
     overflow-x:hidden;
   }
-  body::before{
-    content:'';
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:0;
-    background-image:repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 3px);
-    opacity:.5;
-  }
   h1,h2,h3{ margin:0; font-weight:400; }
   p{ margin:0; }
   a{ color:inherit; text-decoration:none; }
@@ -113,7 +104,7 @@
   }
   .btn--ghost{
     background:transparent;
-    border:1px solid var(--border);
+    border:1px solid #4A4436;
     color:var(--text);
   }
   .btn--ghost:hover{
@@ -125,7 +116,7 @@
   .divider{
     position:relative;
     height:1px;
-    background:var(--border);
+    background:#4A4436;
     max-width:1140px;
     margin:0 auto;
   }
@@ -172,7 +163,7 @@
   .nav__right{ display:flex; align-items:center; gap:18px; }
   .nav__toggle{
     display:none;
-    background:none; border:1px solid var(--border); border-radius:8px;
+    background:none; border:1px solid #4A4436; border-radius:8px;
     width:40px; height:36px; cursor:pointer;
     flex-direction:column; align-items:center; justify-content:center; gap:4px;
   }
@@ -251,7 +242,7 @@
   .hero__timecode b{ color:var(--text); font-weight:700; }
 
   /* SECTION generic spacing */
-  .section{ padding:88px 0; }
+  .section{ padding:88px 0; background:#1E1E1E; }
   .section__head{ max-width:680px; margin-bottom:48px; }
   .section__title{
     font-family:'Anton',sans-serif;
@@ -288,10 +279,10 @@
     gap:24px;
     align-items:start;
     padding:26px 18px;
-    border-top:1px solid var(--border);
+    border-top:1px solid #4A4436;
     transition:background .2s ease;
   }
-  .service:last-child{ border-bottom:1px solid var(--border); }
+  .service:last-child{ border-bottom:1px solid #4A4436; }
   .service:hover{ background:var(--surface); }
   .service__index{
     font-family:'Space Mono',monospace;
@@ -315,7 +306,7 @@
   .reel{
     display:block;
     background:var(--surface);
-    border:1px solid var(--border);
+    border:1px solid #4A4436;
     border-radius:14px;
     overflow:hidden;
     transition:transform .2s ease, border-color .2s ease;
@@ -383,11 +374,11 @@
 
   /* CONTACT */
   .contact__panel{
-    border:1px solid var(--border);
+    border:1px solid rgba(255,166,0,.35);
     border-radius:18px;
     padding:56px 40px;
     text-align:center;
-    background:linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+    background:linear-gradient(135deg, rgba(255,214,0,.08), rgba(255,107,0,.05));
   }
   .contact__title{
     font-family:'Anton',sans-serif;
@@ -418,7 +409,7 @@
     align-items:center;
     gap:8px;
     padding:9px 16px;
-    border:1px solid var(--border);
+    border:1px solid #4A4436;
     border-radius:999px;
     font-family:'Space Mono',monospace;
     font-size:.78rem;
@@ -434,7 +425,7 @@
 
   /* FOOTER */
   .footer{
-    border-top:1px solid var(--border);
+    border-top:1px solid #4A4436;
     padding:32px 0;
   }
   .footer__row{
@@ -508,7 +499,7 @@
   }
   #modal-box{
     background:#15151B;
-    border:1px solid #2E2A22;
+    border:1px solid #4A4436;
     border-radius:16px;
     padding:32px 28px;
     max-width:900px;
@@ -526,7 +517,7 @@
 
   /* Each video card */
   .vid-card{
-    border:1px solid #2E2A22;
+    border:1px solid #4A4436;
     border-radius:10px;
     overflow:hidden;
     background:#0A0A0D;
